@@ -7,7 +7,7 @@ CREATE COMPUTE MODULE Demo2_Compute
 		 CALL CopyEntireMessage();
 		 SET OutputRoot.JSON.Data.ProcessingNode= ExecutionGroupLabel;
 		 IF(EXISTS(InputRoot.HTTPInputHeader[])) THEN
-		 SET OutputRoot.JSON.Data.RequestQueue = InputRoot.HTTPInputHeader.Host;
+		 SET OutputRoot.JSON.Data.RequestHost = InputRoot.HTTPInputHeader.Host;
 		 
 		ELSE
 		  SET OutputRoot.JSON.Data.RequestQueue = InputRoot.MQMD.SourceQueue;
